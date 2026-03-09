@@ -17,7 +17,7 @@
         $stmt->bind_param("i", $id);
 
         if ($stmt->execute()) {
-            header("Location: salse.php");
+            header("Location: inventory.php");
             exit();
         } else {
             echo "Error deleting book: " . $stmt->error;
@@ -41,7 +41,7 @@
             $stmt->close();
 
             $conn->commit();
-            header("Location: salse.php");
+            header("Location: sales_history.php"); // Redirect to sales history after deleting a sale
             exit();
         } catch (Exception $e) {
             $conn->rollback();

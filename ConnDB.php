@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     }else{
         // Only redirect if this file is accessed directly, not when included
         if (basename($_SERVER['PHP_SELF']) == 'ConnDB.php') {
-            header("Location: Main.php");
+            header("Location: index.php");
             exit;
         }
         // If included by other files, just continue without redirect
